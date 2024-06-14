@@ -14,7 +14,10 @@
             <template v-else>
                 <div class="flex items-center justify-between w-full">
                     <SearchForm/>
-                    <UserSettingsDropdown/>
+                    <div class="flex items-center gap-3">
+                        <LocaleSwitcher/>
+                        <UserSettingsDropdown/>
+                    </div>
                 </div>
                 <div class="flex-1 flex flex-col overflow-hidden">
                     <slot/>
@@ -34,6 +37,7 @@
 import Navigation from "@/Components/app/Navigation.vue";
 import SearchForm from "@/Components/app/SearchForm.vue";
 import UserSettingsDropdown from "@/Components/app/UserSettingsDropdown.vue";
+import LocaleSwitcher from "@/Components/app/LocaleSwitcher.vue";
 import {onMounted, ref} from "vue";
 import {emitter, FILE_UPLOAD_STARTED, showErrorDialog, showSuccessNotification} from "@/event-bus.js";
 import {useForm, usePage} from "@inertiajs/vue3";
